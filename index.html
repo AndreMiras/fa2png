@@ -15,6 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+    <link href="https://rawgit.com/mjolnic/fontawesome-iconpicker/1.2.0/dist/css/fontawesome-iconpicker.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -69,9 +70,16 @@
         <div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">Configure icon</h3>
             </div>
             <div class="panel-body">
+              <div class="form-group">
+                <label>Select icon</label>
+                <div class="input-group">
+                  <input data-placement="bottomRight" class="form-control iconpicker" value="fa-paw" type="text" />
+                  <span class="input-group-addon"></span>
+                </div>
+              </div>
               <a class="btn btn-default" href="#" role="button" onclick="capture()">Capture</a>
               <a class="btn btn-default" href="#" role="button" onclick="capture_and_download()">Capture & Download</a>
             </div>
@@ -80,11 +88,11 @@
         <div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">Icon preview</h3>
             </div>
             <div class="panel-body">
               <div class="text-center" id="icon-canvas">
-                <i class="fa fa-camera-retro"></i>
+                <i id="icon-target" class="fa fa-paw fa-5x"></i>
               </div>
             </div>
           </div>
@@ -92,33 +100,13 @@
       </div>
     </div> <!-- /container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://github.com/niklasvh/html2canvas/releases/download/0.5.0-alpha1/html2canvas.js"></script>
+    <script src="https://rawgit.com/mjolnic/fontawesome-iconpicker/1.2.0/dist/js/fontawesome-iconpicker.js"></script>
+    <script src="custom.js"></script>
     <script type="text/javascript">
-    var image_type = "image/png";
-    var download_canvas_id = "#icon-canvas";
-
-    function capture() {
-        html2canvas($(download_canvas_id), {
-            onrendered: function(canvas) {
-                window.open(canvas.toDataURL(image_type));
-            }
-        });
-    }
-
-    function capture_and_download() {
-        html2canvas($(download_canvas_id), {
-            onrendered: function(canvas) {
-                var a = document.createElement('a');
-                // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-                a.href = canvas.toDataURL(image_type).replace(image_type, "image/octet-stream");
-                a.download = 'image.png';
-                a.click();
-            }
-        });
-    }
-
+      bind_events();
     </script>
   </body>
 </html>
