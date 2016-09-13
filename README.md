@@ -1,2 +1,5 @@
 # fa2png
-FontAwesome to PNG
+
+Converts a FontAwesome icon to to PNG.
+
+<http://andremiras.github.io/fa2png/>
