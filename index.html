@@ -103,10 +103,13 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://github.com/niklasvh/html2canvas/releases/download/0.5.0-alpha1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.6.0/js-yaml.min.js"></script>
     <script src="https://rawgit.com/mjolnic/fontawesome-iconpicker/1.2.0/dist/js/fontawesome-iconpicker.js"></script>
     <script src="custom.js"></script>
     <script type="text/javascript">
-      bind_events();
+    bind_events();
+    var icon_yaml_url = 'https://rawgit.com/FortAwesome/Font-Awesome/v4.6.3/src/icons.yml';
+    load_icon_picker(icon_yaml_url);
     </script>
   </body>
 </html>

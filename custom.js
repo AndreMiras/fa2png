@@ -21,6 +21,10 @@ function capture_and_download() {
     });
 }
 
+/**
+ * Binds the "iconpickerSelected" event in order to display
+ * the selected icon in the target element.
+ */
 function bind_events() {
   // on icon input changed
   $('.iconpicker').on('iconpickerSelected', function(e) {
@@ -28,6 +32,21 @@ function bind_events() {
     e.iconpickerInstance.options.iconBaseClass + ' ' +
     e.iconpickerInstance.options.fullClassFormatter(e.iconpickerValue);
   });
+}
+
+/**
+ * Loads the iconpicker using the icons.yml version provided.
+ */
+function load_icon_picker(icon_yaml_url) {
+  var icons = [];
+  // updates the icon list
+  $.get('https://rawgit.com/FortAwesome/Font-Awesome/v4.6.3/src/icons.yml', function(data){
+    var parsed_yaml = jsyaml.load(data);
+    $.each(parsed_yaml.icons, function(index, icon) {
+        icons.push('fa-' + icon.id);
+    })
+  var options = { icons: icons };
   // binds the iconpicker
-  $('.iconpicker').iconpicker();
+  $('.iconpicker').iconpicker(options);
+  });
 }
