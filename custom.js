@@ -55,9 +55,38 @@ function load_icon_picker(icon_yaml_url) {
 function bind_color_picker()
 {
   var options = {};
-  var elemClass = '.colorpicker-component';
-  $(elemClass).colorpicker();
-  $(elemClass).colorpicker().on('changeColor', function(e) {
+  var elem_class = '.colorpicker-component';
+  $(elem_class).colorpicker();
+  $(elem_class).colorpicker().on('changeColor', function(e) {
     $(icon_target_id)[0].style.color = e.color.toHex();
+  });
+}
+
+/**
+ * Binds slider and input with target font-size.
+ * Also makes sure input and slider are binded together.
+ */
+function bind_size_slider()
+{
+  var options = {
+    max: 512
+  };
+  var font_input_id = '#font-input';
+  var slider_class = '.size-slider';
+  var font_input_elem = $(font_input_id);
+  var slider_elem = $(slider_class);
+  // updates icon font-size on input update events
+  // also makes sure the slider gets updated
+  font_input_elem.on('input propertychange paste', function() {
+    var value = parseInt(font_input_elem.val(), 10);
+    $(icon_target_id)[0].style.fontSize = value + 'px';
+    slider_elem.slider('setValue', value);
+  });
+  slider_elem.slider(options);
+  // updates input element on slide event
+  // also makes sure the input gets updated
+  slider_elem.on("slide", function(slideEvt) {
+    $(icon_target_id)[0].style.fontSize = slideEvt.value + 'px';
+    font_input_elem.val(slideEvt.value);
   });
 }
