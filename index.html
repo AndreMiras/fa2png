@@ -89,8 +89,18 @@
                 </div>
                 <div class="size-slider" style="width:100%"></div>
               </div>
-              <a class="btn btn-default" href="#" role="button" onclick="capture()">Capture</a>
-              <a class="btn btn-default" href="#" role="button" onclick="capture_and_download()">Capture & Download</a>
+              <div class="btn-group">
+                <button type="button" class="btn btn-default" onclick="capture()">Capture</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" onclick="capture_and_download()">Capture & Download</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
