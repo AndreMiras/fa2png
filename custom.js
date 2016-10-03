@@ -46,18 +46,24 @@ function load_icon_picker(icon_yaml_url) {
     $.each(parsed_yaml.icons, function(index, icon) {
         icons.push('fa-' + icon.id);
     })
-  var options = { icons: icons };
-  // binds the iconpicker
-  $('.iconpicker').iconpicker(options);
+    var options = {
+      icons: icons,
+      component: '.picker-component-selector'
+    };
+    // binds the iconpicker
+    $('.iconpicker').iconpicker(options);
   });
 }
 
 function bind_color_picker()
 {
-  var options = {};
+  var options = {
+    component: '.picker-component-selector'
+  };
   var elem_class = '.colorpicker-component';
-  $(elem_class).colorpicker();
-  $(elem_class).colorpicker().on('changeColor', function(e) {
+
+  var colorpicker = $(elem_class).colorpicker(options);
+  colorpicker.on('changeColor', function(e) {
     $(icon_target_id)[0].style.color = e.color.toHex();
   });
 }

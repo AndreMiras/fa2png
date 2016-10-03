@@ -2,3 +2,11 @@ body {
   padding-top: 70px;
   padding-bottom: 30px;
 }
+
+.input-group-addon.left {
+  width: 60px;
+}
+
+.input-group-addon.right {
+  width: 50px;
+}
