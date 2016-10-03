@@ -1,5 +1,6 @@
 var image_type = "image/png";
 var download_canvas_id = "#icon-canvas";
+var icon_target_id = "#icon-target";
 
 function capture() {
     html2canvas($(download_canvas_id), {
@@ -28,7 +29,7 @@ function capture_and_download() {
 function bind_events() {
   // on icon input changed
   $('.iconpicker').on('iconpickerSelected', function(e) {
-    $('#icon-target').get(0).className = 'fa-5x ' +
+    $(icon_target_id).get(0).className = 'fa-5x ' +
     e.iconpickerInstance.options.iconBaseClass + ' ' +
     e.iconpickerInstance.options.fullClassFormatter(e.iconpickerValue);
   });
@@ -48,5 +49,15 @@ function load_icon_picker(icon_yaml_url) {
   var options = { icons: icons };
   // binds the iconpicker
   $('.iconpicker').iconpicker(options);
+  });
+}
+
+function bind_color_picker()
+{
+  var options = {};
+  var elemClass = '.colorpicker-component';
+  $(elemClass).colorpicker();
+  $(elemClass).colorpicker().on('changeColor', function(e) {
+    $(icon_target_id)[0].style.color = e.color.toHex();
   });
 }

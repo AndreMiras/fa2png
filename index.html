@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +14,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://rawgit.com/mjolnic/fontawesome-iconpicker/1.2.0/dist/css/fontawesome-iconpicker.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.5/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="custom.css" rel="stylesheet">
@@ -64,7 +64,7 @@
 
     <div class="container theme-showcase" role="main">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Configure icon</h3>
@@ -76,13 +76,18 @@
                   <input data-placement="bottomRight" class="form-control iconpicker" value="fa-paw" type="text" />
                   <span class="input-group-addon"></span>
                 </div>
+                <label>Select color</label>
+                <div class="input-group colorpicker-component">
+                  <input class="form-control" value="#333333" type="text" />
+                  <span class="input-group-addon"><i></i></span>
+                </div>
               </div>
               <a class="btn btn-default" href="#" role="button" onclick="capture()">Capture</a>
               <a class="btn btn-default" href="#" role="button" onclick="capture_and_download()">Capture & Download</a>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Icon preview</h3>
@@ -102,11 +107,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.6.0/js-yaml.min.js"></script>
     <script src="https://rawgit.com/mjolnic/fontawesome-iconpicker/1.2.0/dist/js/fontawesome-iconpicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.5/js/bootstrap-colorpicker.min.js"></script>
     <script src="custom.js"></script>
     <script type="text/javascript">
     bind_events();
     var icon_yaml_url = 'https://rawgit.com/FortAwesome/Font-Awesome/v4.6.3/src/icons.yml';
     load_icon_picker(icon_yaml_url);
+    bind_color_picker();
     </script>
   </body>
 </html>
