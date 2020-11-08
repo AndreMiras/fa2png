@@ -20,7 +20,6 @@ const windowLocation = (base64URL) => {
 };
 
 const capture = (element) => {
-  console.log('capture()');
   domtoimage.toPng(element)
     .then((dataUrl) => {
       windowLocation(dataUrl);
@@ -30,9 +29,17 @@ const capture = (element) => {
     });
 };
 
-const captureAndDownload = () => {
-  console.log('captureAndDownload()');
-  capture();
+const captureAndDownload = (element) => {
+  domtoimage.toPng(element)
+    .then((dataUrl) => {
+      const link = document.createElement('a');
+      link.download = 'image.png';
+      link.href = dataUrl;
+      link.click();
+    })
+    .catch((error) => {
+      console.error('oops, something went wrong!', error);
+    });
 };
 
 const getIconCanvas = () => (
