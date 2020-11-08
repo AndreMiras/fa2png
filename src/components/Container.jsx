@@ -1,20 +1,19 @@
 import React from 'react';
+import { Col, Container as ReactContainer, Row } from 'react-bootstrap';
 import ConfigureIcon from './ConfigureIcon';
 import IconPreview from './IconPreview';
 
 const Container = () => (
-  <div className="container theme-showcase" role="main">
-    <div className="row">
-
-      <div className="col-md-3">
+  <ReactContainer>
+    <Row>
+      <Col xs={3}>
         <ConfigureIcon />
-      </div>
-
-      <div className="col-md-9">
+      </Col>
+      <Col xs={9}>
         <IconPreview />
-      </div>
-    </div>
-  </div>
+      </Col>
+    </Row>
+  </ReactContainer>
 );
 
 export default Container;

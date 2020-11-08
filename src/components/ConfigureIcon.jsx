@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Dropdown, MenuItem } from 'react-bootstrap';
+import {
+  Button, ButtonGroup, Card, Dropdown,
+} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const capture = () => (
@@ -10,12 +12,30 @@ const captureAndDownload = () => (
   console.log('captureAndDownload()')
 );
 
+const CaptureButton = () => (
+  <Dropdown as={ButtonGroup}>
+    <Button onClick={capture}>
+      <FontAwesomeIcon icon="magic" />
+      {' '}
+      Capture
+    </Button>
+    <Dropdown.Toggle split />
+    <Dropdown.Menu>
+      <Dropdown.Item eventKey="1">
+        <Button type="link" onClick={captureAndDownload}>
+          <FontAwesomeIcon icon="download" />
+          {' '}
+          Capture & Download
+        </Button>
+      </Dropdown.Item>
+    </Dropdown.Menu>
+  </Dropdown>
+);
+
 const ConfigureIcon = () => (
-  <div className="panel panel-default">
-    <div className="panel-heading">
-      <h3 className="panel-title">Configure icon</h3>
-    </div>
-    <div className="panel-body">
+  <Card>
+    <Card.Header>Configure icon</Card.Header>
+    <Card.Body>
       <div className="form-group">
         <div className="input-group">
           <span className="input-group-addon left">Icon</span>
@@ -38,25 +58,9 @@ const ConfigureIcon = () => (
         </div>
         <div className="size-slider" style={{ width: '100%' }} />
       </div>
-      <Dropdown>
-        <Button onClick={capture}>
-          <FontAwesomeIcon icon="magic" />
-          {' '}
-          Capture
-        </Button>
-        <Dropdown.Toggle />
-        <Dropdown.Menu className="super-colors">
-          <MenuItem eventKey="1">
-            <Button bsStyle="link" onClick={captureAndDownload}>
-              <FontAwesomeIcon icon="download" />
-              {' '}
-              Capture & Download
-            </Button>
-          </MenuItem>
-        </Dropdown.Menu>
-      </Dropdown>
-    </div>
-  </div>
+      <CaptureButton />
+    </Card.Body>
+  </Card>
 );
 
 export default ConfigureIcon;
