@@ -1,5 +1,7 @@
+import { Container as ReactContainer } from 'react-bootstrap';
+
 const Container = () => (
-  <div className="container theme-showcase" role="main">
+  <ReactContainer className="container theme-showcase" role="main">
     <div className="row">
       <div className="col-md-3">
         <div className="panel panel-default">
@@ -57,7 +59,7 @@ const Container = () => (
         </div>
       </div>
     </div>
-  </div>
+  </ReactContainer>
 );
 
 export default Container;
