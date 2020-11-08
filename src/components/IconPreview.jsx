@@ -6,7 +6,7 @@ const IconPreview = () => (
   <Card>
     <Card.Header>Icon preview</Card.Header>
     <Card.Body>
-      <div className="text-center">
+      <div id="icon-canvas" className="text-center">
         <FontAwesomeIcon id="icon-target" icon="paw" size="5x" />
       </div>
     </Card.Body>
