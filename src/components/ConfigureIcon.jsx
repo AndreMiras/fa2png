@@ -66,12 +66,14 @@ const CaptureButton = () => (
   </Dropdown>
 );
 
-const CustomInput = ({ prepend, defaultValue, append }) => (
+const CustomInput = ({
+  onChange, prepend, value, append,
+}) => (
   <InputGroup className="mb-3">
     <InputGroup.Prepend>
       <InputGroup.Text>{prepend}</InputGroup.Text>
     </InputGroup.Prepend>
-    <FormControl aria-label="icon" defaultValue={defaultValue} />
+    <FormControl aria-label="icon" value={value} onChange={(e) => onChange(e.target.value)} />
     <InputGroup.Append>
       <InputGroup.Text>
         {append}
@@ -80,39 +82,62 @@ const CustomInput = ({ prepend, defaultValue, append }) => (
   </InputGroup>
 );
 CustomInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
   prepend: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string,
   ]).isRequired,
-  defaultValue: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   append: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string,
   ]).isRequired,
 };
 
-const IconInput = () => (
-  <CustomInput prepend="Icon" defaultValue="fa-paw" append={<FontAwesomeIcon icon="paw" />} />
+const IconInput = ({ onChange, value }) => (
+  <CustomInput onChange={onChange} prepend="Icon" value={value} append={<FontAwesomeIcon icon="paw" />} />
 );
+IconInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};
 
-const ColorInput = () => (
-  <CustomInput prepend="Color" defaultValue="#333333" append={<FontAwesomeIcon icon="palette" />} />
+const ColorInput = ({ onChange, value }) => (
+  <CustomInput onChange={onChange} prepend="Color" value={value} append={<FontAwesomeIcon icon="palette" />} />
 );
+ColorInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};
 
-const SizeInput = () => (
-  <CustomInput prepend="Size" defaultValue="15" append="px" />
+const SizeInput = ({ onChange, value }) => (
+  <CustomInput onChange={onChange} prepend="Size" value={value} append="px" />
 );
+SizeInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};
 
-const ConfigureIcon = () => (
+const ConfigureIcon = ({
+  onIconChange, iconValue, onColorChange, colorValue, onSizeChange, sizeValue,
+}) => (
   <Card className="ConfigureIcon">
     <Card.Header>Configure icon</Card.Header>
     <Card.Body>
-      <IconInput />
-      <ColorInput />
-      <SizeInput />
+      <IconInput onChange={onIconChange} value={iconValue} />
+      <ColorInput onChange={onColorChange} value={colorValue} />
+      <SizeInput onChange={onSizeChange} value={sizeValue} />
       <CaptureButton />
     </Card.Body>
   </Card>
 );
+ConfigureIcon.propTypes = {
+  onIconChange: PropTypes.func.isRequired,
+  iconValue: PropTypes.string.isRequired,
+  onColorChange: PropTypes.func.isRequired,
+  colorValue: PropTypes.string.isRequired,
+  onSizeChange: PropTypes.func.isRequired,
+  sizeValue: PropTypes.string.isRequired,
+};
 
 export default ConfigureIcon;
