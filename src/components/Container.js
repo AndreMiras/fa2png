@@ -1,7 +1,7 @@
-import { Container as ReactContainer } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Container = () => (
-  <ReactContainer className="container theme-showcase" role="main">
+  <div className="container theme-showcase" role="main">
     <div className="row">
       <div className="col-md-3">
         <div className="panel panel-default">
@@ -32,14 +32,14 @@ const Container = () => (
               <div className="size-slider" style={{ width: "100%" }}></div>
             </div>
             <div className="btn-group">
-                <button type="button" className="btn btn-default" onclick="capture()"><i className="fa fa-magic"></i> Capture</button>
+                <button type="button" className="btn btn-default" onclick="capture()"><FontAwesomeIcon icon="magic" /> Capture</button>
               <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span className="caret"></span>
                 <span className="sr-only">Toggle Dropdown</span>
               </button>
               <ul className="dropdown-menu">
                 <li>
-                  <a href="#" onclick="capture_and_download()"><i className="fa fa-download"></i> Capture & Download</a>
+                  <a href="#" onclick="capture_and_download()"><FontAwesomeIcon icon="download" /> Capture & Download</a>
                 </li>
               </ul>
             </div>
@@ -53,13 +53,13 @@ const Container = () => (
           </div>
           <div className="panel-body">
             <div className="text-center" id="icon-canvas">
-              <i id="icon-target" className="fa fa-paw fa-5x"></i>
+              <FontAwesomeIcon id="icon-target" icon="download" size="5x" />
             </div>
           </div>
         </div>
       </div>
     </div>
-  </ReactContainer>
+  </div>
 );
 
 export default Container;
