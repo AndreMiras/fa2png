@@ -56,7 +56,7 @@ const CaptureButton = () => (
     <Dropdown.Toggle split />
     <Dropdown.Menu>
       <Dropdown.Item eventKey="1">
-        <Button type="link" onClick={() => captureAndDownload(getIconCanvas())}>
+        <Button variant="link" onClick={() => captureAndDownload(getIconCanvas())}>
           <FontAwesomeIcon icon="download" />
           {' '}
           Capture & Download
