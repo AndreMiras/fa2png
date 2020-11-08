@@ -1,4 +1,10 @@
+import React from 'react';
+import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const captureAndDownload = () => (
+  console.log('captureAndDownload()')
+);
 
 const Container = () => (
   <div className="container theme-showcase" role="main">
@@ -43,11 +49,11 @@ const Container = () => (
               </button>
               <ul className="dropdown-menu">
                 <li>
-                  <a href="#" onClick="capture_and_download()">
+                  <Button type="link" onClick={captureAndDownload}>
                     <FontAwesomeIcon icon="download" />
                     {' '}
                     Capture & Download
-                  </a>
+                  </Button>
                 </li>
               </ul>
             </div>

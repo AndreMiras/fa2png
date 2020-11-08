@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Nav = () => (
   <nav className="navbar navbar-inverse navbar-fixed-top">
     <div className="container">
@@ -8,7 +10,7 @@ const Nav = () => (
           <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
-        <a className="navbar-brand" href="#">FontAwesome to PNG</a>
+        <a className="navbar-brand" href={process.env.PUBLIC_URL}>FontAwesome to PNG</a>
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav">
