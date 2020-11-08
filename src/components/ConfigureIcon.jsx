@@ -66,12 +66,12 @@ const CaptureButton = () => (
   </Dropdown>
 );
 
-const CustomInput = ({ prepend, value, append }) => (
+const CustomInput = ({ prepend, defaultValue, append }) => (
   <InputGroup className="mb-3">
     <InputGroup.Prepend>
       <InputGroup.Text>{prepend}</InputGroup.Text>
     </InputGroup.Prepend>
-    <FormControl aria-label="icon" value={value} />
+    <FormControl aria-label="icon" defaultValue={defaultValue} />
     <InputGroup.Append>
       <InputGroup.Text>
         {append}
@@ -80,21 +80,27 @@ const CustomInput = ({ prepend, value, append }) => (
   </InputGroup>
 );
 CustomInput.propTypes = {
-  prepend: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  append: PropTypes.string.isRequired,
+  prepend: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+  ]).isRequired,
+  defaultValue: PropTypes.string.isRequired,
+  append: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+  ]).isRequired,
 };
 
 const IconInput = () => (
-  <CustomInput prepend="Icon" value="fa-paw" append={<FontAwesomeIcon icon="paw" />} />
+  <CustomInput prepend="Icon" defaultValue="fa-paw" append={<FontAwesomeIcon icon="paw" />} />
 );
 
 const ColorInput = () => (
-  <CustomInput prepend="Color" value="#333333" append={<FontAwesomeIcon icon="palette" />} />
+  <CustomInput prepend="Color" defaultValue="#333333" append={<FontAwesomeIcon icon="palette" />} />
 );
 
 const SizeInput = () => (
-  <CustomInput prepend="Size" value="15" append="px" />
+  <CustomInput prepend="Size" defaultValue="15" append="px" />
 );
 
 const ConfigureIcon = () => (
