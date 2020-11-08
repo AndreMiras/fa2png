@@ -1,6 +1,8 @@
 import React from 'react';
+import './ConfigureIcon.css';
+import PropTypes from 'prop-types';
 import {
-  Button, ButtonGroup, Card, Dropdown,
+  Button, ButtonGroup, Card, Dropdown, FormControl, InputGroup,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -32,32 +34,44 @@ const CaptureButton = () => (
   </Dropdown>
 );
 
+const CustomInput = ({ prepend, value, append }) => (
+  <InputGroup className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text>{prepend}</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl aria-label="icon" value={value} />
+    <InputGroup.Append>
+      <InputGroup.Text>
+        {append}
+      </InputGroup.Text>
+    </InputGroup.Append>
+  </InputGroup>
+);
+CustomInput.propTypes = {
+  prepend: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  append: PropTypes.string.isRequired,
+};
+
+const IconInput = () => (
+  <CustomInput prepend="Icon" value="fa-paw" append={<FontAwesomeIcon icon="paw" />} />
+);
+
+const ColorInput = () => (
+  <CustomInput prepend="Color" value="#333333" append={<FontAwesomeIcon icon="palette" />} />
+);
+
+const SizeInput = () => (
+  <CustomInput prepend="Size" value="15" append="px" />
+);
+
 const ConfigureIcon = () => (
-  <Card>
+  <Card className="ConfigureIcon">
     <Card.Header>Configure icon</Card.Header>
     <Card.Body>
-      <div className="form-group">
-        <div className="input-group">
-          <span className="input-group-addon left">Icon</span>
-          <input data-placement="bottomRight" className="form-control iconpicker" value="fa-paw" type="text" />
-          <span className="input-group-addon picker-component-selector right" />
-        </div>
-      </div>
-      <div className="form-group">
-        <div className="input-group colorpicker-component">
-          <span className="input-group-addon left">Color</span>
-          <input className="form-control" value="#333333" type="text" />
-          <span className="input-group-addon picker-component-selector right"><i /></span>
-        </div>
-      </div>
-      <div className="form-group">
-        <div className="input-group">
-          <span className="input-group-addon left">Size</span>
-          <input id="font-input" className="form-control" value="15" type="text" />
-          <span className="input-group-addon right">px</span>
-        </div>
-        <div className="size-slider" style={{ width: '100%' }} />
-      </div>
+      <IconInput />
+      <ColorInput />
+      <SizeInput />
       <CaptureButton />
     </Card.Body>
   </Card>
