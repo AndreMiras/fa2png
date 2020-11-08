@@ -1,6 +1,10 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Dropdown, MenuItem } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const capture = () => (
+  console.log('capture()')
+);
 
 const captureAndDownload = () => (
   console.log('captureAndDownload()')
@@ -37,26 +41,23 @@ const Container = () => (
               </div>
               <div className="size-slider" style={{ width: '100%' }} />
             </div>
-            <div className="btn-group">
-              <button type="button" className="btn btn-default" onClick="capture()">
+            <Dropdown>
+              <Button onClick={capture}>
                 <FontAwesomeIcon icon="magic" />
                 {' '}
                 Capture
-              </button>
-              <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span className="caret" />
-                <span className="sr-only">Toggle Dropdown</span>
-              </button>
-              <ul className="dropdown-menu">
-                <li>
-                  <Button type="link" onClick={captureAndDownload}>
+              </Button>
+              <Dropdown.Toggle />
+              <Dropdown.Menu className="super-colors">
+                <MenuItem eventKey="1">
+                  <Button bsStyle="link" onClick={captureAndDownload}>
                     <FontAwesomeIcon icon="download" />
                     {' '}
                     Capture & Download
                   </Button>
-                </li>
-              </ul>
-            </div>
+                </MenuItem>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
       </div>
