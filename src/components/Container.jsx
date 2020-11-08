@@ -9,26 +9,19 @@ const Container = () => {
     color: '#333333',
     size: '100',
   });
-  const onIconChange = (icon) => (
-    setIconProperties({ ...iconProperties, icon })
+  const onChange = (property) => (value) => (
+    setIconProperties({ ...iconProperties, [property]: value })
   );
-  const onColorChange = (color) => (
-    setIconProperties({ ...iconProperties, color })
-  );
-  const onSizeChange = (size) => (
-    setIconProperties({ ...iconProperties, size })
-  );
-
   return (
     <ReactContainer>
       <Row>
         <Col xs={3}>
           <ConfigureIcon
-            onIconChange={onIconChange}
+            onIconChange={onChange('icon')}
             iconValue={iconProperties.icon}
-            onColorChange={onColorChange}
+            onColorChange={onChange('color')}
             colorValue={iconProperties.color}
-            onSizeChange={onSizeChange}
+            onSizeChange={onChange('size')}
             sizeValue={iconProperties.size}
           />
         </Col>
