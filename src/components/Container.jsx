@@ -7,7 +7,7 @@ const Container = () => {
   const [iconProperties, setIconProperties] = useState({
     icon: 'paw',
     color: '#333333',
-    size: '100',
+    size: 100,
   });
   const onChange = (property) => (value) => (
     setIconProperties({ ...iconProperties, [property]: value })

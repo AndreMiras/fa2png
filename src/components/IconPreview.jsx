@@ -12,7 +12,6 @@ const IconPreview = ({ icon, size, color }) => (
           id="icon-target"
           icon={icon}
           style={{ fontSize: `${size}px`, color }}
-          font
         />
       </div>
     </Card.Body>
@@ -21,7 +20,7 @@ const IconPreview = ({ icon, size, color }) => (
 IconPreview.propTypes = {
   icon: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
 };
 
 export default IconPreview;

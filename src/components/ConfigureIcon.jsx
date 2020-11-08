@@ -113,11 +113,11 @@ ColorInput.propTypes = {
 };
 
 const SizeInput = ({ onChange, value }) => (
-  <CustomInput onChange={onChange} prepend="Size" value={value} append="px" />
+  <CustomInput onChange={onChange} prepend="Size" value={value.toString()} append="px" />
 );
 SizeInput.propTypes = {
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 const CustomSlider = ({ onChange, value }) => (
@@ -140,7 +140,7 @@ const SizeInputWithSlider = ({ onChange, value }) => (
 );
 SizeInputWithSlider.propTypes = {
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 const ConfigureIcon = ({
@@ -162,7 +162,7 @@ ConfigureIcon.propTypes = {
   onColorChange: PropTypes.func.isRequired,
   colorValue: PropTypes.string.isRequired,
   onSizeChange: PropTypes.func.isRequired,
-  sizeValue: PropTypes.string.isRequired,
+  sizeValue: PropTypes.number.isRequired,
 };
 
 export default ConfigureIcon;
