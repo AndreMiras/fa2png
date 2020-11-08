@@ -1,9 +1,11 @@
 import React from 'react';
 import './ConfigureIcon.css';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 import domtoimage from 'dom-to-image';
 import PropTypes from 'prop-types';
 import {
-  Button, ButtonGroup, Card, Dropdown, FormControl, InputGroup,
+  Button, ButtonGroup, Card, Col, Dropdown, FormControl, InputGroup, Row,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -118,6 +120,29 @@ SizeInput.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
+const CustomSlider = ({ onChange, value }) => (
+  <Row>
+    <Col className="mb-3">
+      <Slider onChange={onChange} value={value} max={500} />
+    </Col>
+  </Row>
+);
+CustomSlider.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+const SizeInputWithSlider = ({ onChange, value }) => (
+  <>
+    <SizeInput onChange={onChange} value={value} />
+    <CustomSlider onChange={onChange} value={value} />
+  </>
+);
+SizeInputWithSlider.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};
+
 const ConfigureIcon = ({
   onIconChange, iconValue, onColorChange, colorValue, onSizeChange, sizeValue,
 }) => (
@@ -126,7 +151,7 @@ const ConfigureIcon = ({
     <Card.Body>
       <IconInput onChange={onIconChange} value={iconValue} />
       <ColorInput onChange={onColorChange} value={colorValue} />
-      <SizeInput onChange={onSizeChange} value={sizeValue} />
+      <SizeInputWithSlider onChange={onSizeChange} value={sizeValue} />
       <CaptureButton />
     </Card.Body>
   </Card>
