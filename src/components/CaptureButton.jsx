@@ -1,5 +1,4 @@
 import React from 'react';
-import 'rc-slider/assets/index.css';
 import domtoimage from 'dom-to-image';
 import { Button, ButtonGroup, Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

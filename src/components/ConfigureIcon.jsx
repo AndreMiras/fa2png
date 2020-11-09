@@ -7,14 +7,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CaptureButton from './CaptureButton';
 import CustomInput from './CustomInput';
-
-const IconInput = ({ onChange, value }) => (
-  <CustomInput onChange={onChange} prepend="Icon" value={value} append={<FontAwesomeIcon icon="paw" />} />
-);
-IconInput.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-};
+import IconInput from './IconInput';
 
 const ColorInput = ({ onChange, value }) => (
   <CustomInput onChange={onChange} prepend="Color" value={value} append={<FontAwesomeIcon icon="palette" />} />

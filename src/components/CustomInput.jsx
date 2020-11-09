@@ -1,6 +1,5 @@
 import React from 'react';
 import './ConfigureIcon.css';
-import 'rc-slider/assets/index.css';
 import PropTypes from 'prop-types';
 import { FormControl, InputGroup } from 'react-bootstrap';
 
