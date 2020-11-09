@@ -3,39 +3,10 @@ import './ConfigureIcon.css';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import PropTypes from 'prop-types';
-import {
-  Card, Col, FormControl, InputGroup, Row,
-} from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CaptureButton from './CaptureButton';
-
-const CustomInput = ({
-  onChange, prepend, value, append,
-}) => (
-  <InputGroup className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text>{prepend}</InputGroup.Text>
-    </InputGroup.Prepend>
-    <FormControl aria-label="icon" value={value} onChange={(e) => onChange(e.target.value)} />
-    <InputGroup.Append>
-      <InputGroup.Text>
-        {append}
-      </InputGroup.Text>
-    </InputGroup.Append>
-  </InputGroup>
-);
-CustomInput.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  prepend: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-  ]).isRequired,
-  value: PropTypes.string.isRequired,
-  append: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-  ]).isRequired,
-};
+import CustomInput from './CustomInput';
 
 const IconInput = ({ onChange, value }) => (
   <CustomInput onChange={onChange} prepend="Icon" value={value} append={<FontAwesomeIcon icon="paw" />} />
