@@ -4,18 +4,10 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import PropTypes from 'prop-types';
 import { Card, Col, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CaptureButton from './CaptureButton';
 import CustomInput from './CustomInput';
 import IconInput from './IconInput';
-
-const ColorInput = ({ onChange, value }) => (
-  <CustomInput onChange={onChange} prepend="Color" value={value} append={<FontAwesomeIcon icon="palette" />} />
-);
-ColorInput.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-};
+import ColorInput from './ColorInput';
 
 const SizeInput = ({ onChange, value }) => (
   <CustomInput onChange={onChange} prepend="Size" value={value.toString()} append="px" />
