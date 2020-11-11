@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import CustomInput from './CustomInput';
 
-const CustomPopover = ({ onChange, value }) => (
+const customPopover = (onChange, value) => (
   <Popover>
     <Popover.Title as="h3">Color</Popover.Title>
     <Popover.Content>
@@ -13,16 +13,12 @@ const CustomPopover = ({ onChange, value }) => (
     </Popover.Content>
   </Popover>
 );
-CustomPopover.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-};
 
 const CustomOverlayTrigger = ({ onChange, value }) => (
   <OverlayTrigger
     trigger="click"
     placement="right"
-    overlay={<CustomPopover onChange={onChange} value={value} />}
+    overlay={customPopover(onChange, value)}
   >
     <FontAwesomeIcon icon="palette" />
   </OverlayTrigger>
@@ -33,14 +29,12 @@ CustomOverlayTrigger.propTypes = {
 };
 
 const ColorInput = ({ onChange, value }) => (
-  <>
-    <CustomInput
-      onChange={onChange}
-      prepend="Color"
-      value={value}
-      append={<CustomOverlayTrigger onChange={onChange} value={value} />}
-    />
-  </>
+  <CustomInput
+    onChange={onChange}
+    prepend="Color"
+    value={value}
+    append={<CustomOverlayTrigger onChange={onChange} value={value} />}
+  />
 );
 ColorInput.propTypes = {
   onChange: PropTypes.func.isRequired,
