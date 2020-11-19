@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*
+ * Specifically required for the huge icon list so it's scrollable.
+ */
+.popover-body {
+  overflow-y: scroll;
+  height: 300px;
+}
