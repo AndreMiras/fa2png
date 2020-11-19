@@ -2,6 +2,6 @@
   width: 60px;
 }
 
-.ConfigureIcon .input-group-append .input-group-text {
+.ConfigureIcon .input-group-append .input-group-text, .ConfigureIcon .input-group-append button {
   width: 50px;
 }

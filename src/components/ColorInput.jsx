@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SketchPicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
+import {
+  OverlayTrigger, Popover, InputGroup, Button,
+} from 'react-bootstrap';
 import CustomInput from './CustomInput';
 
 const customPopover = (onChange, value) => (
@@ -14,16 +16,20 @@ const customPopover = (onChange, value) => (
   </Popover>
 );
 
-const CustomOverlayTrigger = ({ onChange, value }) => (
-  <OverlayTrigger
-    trigger="click"
-    placement="right"
-    overlay={customPopover(onChange, value)}
-  >
-    <FontAwesomeIcon icon="palette" />
-  </OverlayTrigger>
+const Append = ({ onChange, value }) => (
+  <InputGroup.Append>
+    <OverlayTrigger
+      trigger="click"
+      placement="right"
+      overlay={customPopover(onChange, value)}
+    >
+      <Button variant="outline-secondary">
+        <FontAwesomeIcon icon="palette" />
+      </Button>
+    </OverlayTrigger>
+  </InputGroup.Append>
 );
-CustomOverlayTrigger.propTypes = {
+Append.propTypes = {
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
 };
@@ -33,7 +39,7 @@ const ColorInput = ({ onChange, value }) => (
     onChange={onChange}
     prepend="Color"
     value={value}
-    append={<CustomOverlayTrigger onChange={onChange} value={value} />}
+    append={<Append onChange={onChange} value={value} />}
   />
 );
 ColorInput.propTypes = {
