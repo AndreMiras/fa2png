@@ -1,0 +1,16 @@
+import React from 'react';
+import { Container, Nav as ReactNav, Navbar } from 'react-bootstrap';
+
+const Nav = () => (
+  <Navbar bg="dark" variant="dark" className="mb-sm-4">
+    <Container>
+      <Navbar.Brand href={process.env.PUBLIC_URL}>FontAwesome to PNG</Navbar.Brand>
+      <ReactNav className="mr-auto">
+        <ReactNav.Link href={process.env.PUBLIC_URL}>Home</ReactNav.Link>
+        <ReactNav.Link href="https://github.com/AndreMiras/fa2png">About</ReactNav.Link>
+      </ReactNav>
+    </Container>
+  </Navbar>
+);
+
+export default Nav;
