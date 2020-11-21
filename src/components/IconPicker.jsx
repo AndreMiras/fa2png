@@ -59,7 +59,11 @@ const PopoverContent = ({ icons, onIconClick }) => (
 );
 PopoverContent.propTypes = IconList.propTypes;
 
-const IconPicker = ({ onChange }) => {
+/**
+ * Note custom `Popover` require props (and refs) to be passed
+ * https://github.com/react-bootstrap/react-bootstrap/issues/1345
+ */
+const IconPicker = React.forwardRef(({ onChange, ...props }, ref) => {
   const [iconsYaml, setIconsYaml] = useState([]);
   const [filteredIcons, setFilteredIcons] = useState([]);
   const filterIcon = (value) => (
@@ -73,12 +77,13 @@ const IconPicker = ({ onChange }) => {
     });
   }, []);
   return (
-    <Popover>
+    /* eslint-disable react/jsx-props-no-spreading */
+    <Popover ref={ref} {...props}>
       <PopoverTitle onChange={(e) => filterIcon(e.target.value)} />
       <PopoverContent icons={filteredIcons} onIconClick={onChange} />
     </Popover>
   );
-};
+});
 IconPicker.propTypes = {
   onChange: PropTypes.func.isRequired,
 };

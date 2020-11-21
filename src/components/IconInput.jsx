@@ -7,14 +7,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CustomInput from './CustomInput';
 import IconPicker from './IconPicker';
 
+const renderOverlay = ({ onChange }) => (
+  <IconPicker onChange={onChange} />
+);
+
 const Append = ({ onChange, value }) => (
   <InputGroup.Append>
     <OverlayTrigger
       trigger="click"
       placement="right"
       rootClose
-      overlay={IconPicker({ onChange })}
-      scrollParent={{ scrollParent: true }}
+      overlay={renderOverlay({ onChange })}
     >
       <Button variant="outline-secondary">
         <FontAwesomeIcon icon={value} />
