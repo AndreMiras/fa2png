@@ -1,6 +1,7 @@
 {
   "name": "fa2png",
-  "version": "0.1.0",
+  "homepage": "https://andremiras.github.io/fa2png/",
+  "version": "2020.11.21",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -13,6 +14,7 @@
     "bootstrap": "^4.5.3",
     "dom-to-image": "^2.6.0",
     "font-awesome": "^4.6.3",
+    "js-yaml": "^3.14.0",
     "prop-types": "^15.7.2",
     "rc-slider": "^9.6.1",
     "react": "^17.0.1",
@@ -28,7 +30,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc 'src/**/*.{js,jsx}'",
-    "format": "eslint -c .eslintrc 'src/**/*.{js,jsx}' --fix"
+    "format": "eslint -c .eslintrc 'src/**/*.{js,jsx}' --fix",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^18.2.1"
+    "eslint-config-airbnb": "^18.2.1",
+    "gh-pages": "^3.1.0"
   }
 }

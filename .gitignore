@@ -1,2 +1,7 @@
-*.swp
+# dependencies
 node_modules/
+
+# production
+/build
+
+*.swp
