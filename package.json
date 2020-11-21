@@ -1,7 +1,7 @@
 {
   "name": "fa2png",
   "homepage": "https://andremiras.github.io/fa2png/",
-  "version": "0.1.0",
+  "version": "2020.11.21",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
