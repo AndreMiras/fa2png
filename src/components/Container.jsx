@@ -15,7 +15,7 @@ const Container = () => {
   return (
     <ReactContainer>
       <Row>
-        <Col xs={3}>
+        <Col md={5} lg={4}>
           <ConfigureIcon
             onIconChange={onChange('icon')}
             iconValue={iconProperties.icon}
@@ -25,7 +25,7 @@ const Container = () => {
             sizeValue={iconProperties.size}
           />
         </Col>
-        <Col xs={9}>
+        <Col md={7} lg={8}>
           <IconPreview
             icon={iconProperties.icon}
             color={iconProperties.color}

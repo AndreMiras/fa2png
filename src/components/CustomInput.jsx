@@ -1,5 +1,4 @@
 import React from 'react';
-import './ConfigureIcon.css';
 import PropTypes from 'prop-types';
 import { FormControl, InputGroup } from 'react-bootstrap';
 

@@ -1,7 +1,8 @@
 # Change Log
 
 ## [Unreleased]
-  - fixes findDOMNode depreciation warning, refs #6
+  - Fix findDOMNode depreciation warning, refs #6
+  - Improve responsiveness, refs #11
 
 ## [2020.11.21]
   - Migrate to React, refs #4
