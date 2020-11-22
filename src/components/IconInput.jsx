@@ -16,6 +16,7 @@ const Append = ({ onChange, value }) => (
     <OverlayTrigger
       trigger="click"
       placement="right"
+      transition={false}
       rootClose
       overlay={renderOverlay({ onChange })}
     >

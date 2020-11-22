@@ -1,5 +1,8 @@
 # Change Log
 
+## [Unreleased]
+  - fixes findDOMNode depreciation warning, refs #6
+
 ## [2020.11.21]
   - Migrate to React, refs #4
   - Add version to footers, refs #5
