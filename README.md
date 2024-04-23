@@ -1,7 +1,7 @@
 # fa2png
 
-[![Tests](https://github.com/AndreMiras/fa2png/workflows/Tests/badge.svg?branch=develop)](https://github.com/AndreMiras/fa2png/actions?query=workflow%3ATests)
-[![Deploy](https://github.com/AndreMiras/fa2png/workflows/Deploy/badge.svg?branch=develop)](https://github.com/AndreMiras/fa2png/actions?query=workflow%3ADeploy)
+[![Tests](https://github.com/AndreMiras/fa2png/actions/workflows/tests.yml/badge.svg)](https://github.com/AndreMiras/fa2png/actions/workflows/tests.yml)
+[![Deploy](https://github.com/AndreMiras/fa2png/actions/workflows/deploy.yml/badge.svg)](https://github.com/AndreMiras/fa2png/actions/workflows/deploy.yml)
 
 Converts a FontAwesome icon to PNG.
 
