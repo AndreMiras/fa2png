@@ -21,8 +21,8 @@ const capture = (element) => {
       windowLocation(dataUrl);
     })
     .catch((error) => {
-      // console.error('oops, something went wrong!', error);
-      error;
+      // eslint-disable-next-line no-console
+      console.error('oops, something went wrong!', error);
     });
 };
 
@@ -35,8 +35,8 @@ const captureAndDownload = (element) => {
       link.click();
     })
     .catch((error) => {
-      // console.error('oops, something went wrong!', error);
-      error;
+      // eslint-disable-next-line no-console
+      console.error('oops, something went wrong!', error);
     });
 };
 
