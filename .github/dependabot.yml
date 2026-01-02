@@ -1,0 +1,40 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "andremiras"
+    commit-message:
+      prefix: ":arrow_up:"
+      include: "scope"
+    # Ignore non-LTS Node.js versions for @types/node
+    # Update this when bumping to the next LTS (e.g., 26.x -> ignore 27.x)
+    ignore:
+      - dependency-name: "@types/node"
+        versions: ["25.x"]
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "react-scripts"
+      fontawesome:
+        patterns:
+          - "@fortawesome/*"
+      bootstrap:
+        patterns:
+          - "bootstrap"
+          - "react-bootstrap"
+      testing:
+        patterns:
+          - "@testing-library/*"
+      eslint:
+        patterns:
+          - "eslint"
+          - "eslint-*"
