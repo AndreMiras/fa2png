@@ -4,7 +4,7 @@
   "version": "2024.04.23",
   "private": true,
   "engines": {
-    "node": ">=18.0.0 <19.0.0",
+    "node": ">=18.0.0",
     "npm": ">=9.0.0"
   },
   "dependencies": {
@@ -30,9 +30,9 @@
   },
   "scripts": {
     "preinstall": "node -e \"if(process.versions.node.split('.')[0]<18){console.error('Node 18+ required');process.exit(1)}\"",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc 'src/**/*.{js,jsx}'",
     "format": "eslint -c .eslintrc 'src/**/*.{js,jsx}' --fix",
@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
     "eslint-config-airbnb": "^18.2.1",
     "gh-pages": "^5.0.0"
   }
