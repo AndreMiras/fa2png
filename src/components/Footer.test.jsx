@@ -1,7 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Footer from './Footer';
-import { version } from '../../package.json';
+import packageJson from '../../package.json';
+
+const { version } = packageJson;
 
 describe('Footer', () => {
   it('renders copyright text', () => {

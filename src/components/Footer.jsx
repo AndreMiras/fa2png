@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { version } from '../../package.json';
+import packageJson from '../../package.json';
+
+const { version } = packageJson;
 
 const Footer = () => (
   <footer className="footer d-none d-md-block">
