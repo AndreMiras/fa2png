@@ -17,7 +17,7 @@ updates:
     # Update this when bumping to the next LTS (e.g., 26.x -> ignore 27.x)
     ignore:
       - dependency-name: "@types/node"
-        versions: ["25.x"]
+        versions: ["23.x"]
     groups:
       react:
         patterns:

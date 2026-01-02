@@ -9,7 +9,7 @@ Converts a FontAwesome icon to PNG.
 
 ## Requirements
 
-- Node.js 20.x or higher
+- Node.js 22.x or higher
 - Yarn
 
 ## Run
