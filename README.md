@@ -7,6 +7,10 @@ Converts a FontAwesome icon to PNG.
 
 <http://andremiras.github.io/fa2png/>
 
+## Requirements
+
+- Node.js 20.x or higher
+- Yarn
 
 ## Run
 ```sh

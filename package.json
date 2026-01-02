@@ -4,8 +4,8 @@
   "version": "2024.04.23",
   "private": true,
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -29,7 +29,6 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "preinstall": "node -e \"if(process.versions.node.split('.')[0]<18){console.error('Node 18+ required');process.exit(1)}\"",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
