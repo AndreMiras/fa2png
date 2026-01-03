@@ -10,7 +10,7 @@ import iconsPath from '@fortawesome/fontawesome-free/metadata/icons.yml';
 const fetchIconsYamlDoc = () => (
   fetch(iconsPath)
     .then((response) => response.text())
-    .then((text) => yaml.safeLoad(text))
+    .then((text) => yaml.load(text))
 );
 
 const filterStyles = (yamlDoc) => (

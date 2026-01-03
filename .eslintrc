@@ -8,5 +8,6 @@
     "allowTernary": 0,
     "no-unused-expressions": "off",
     "no-mixed-operators": "off",
-    "react/require-default-props": ["error", { "functions": "defaultArguments" }]
+    "react/require-default-props": ["error", { "functions": "defaultArguments" }],
+    "react/function-component-definition": "off"
 }
