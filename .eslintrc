@@ -7,5 +7,6 @@
     "allowShortCircuit": 0,
     "allowTernary": 0,
     "no-unused-expressions": "off",
-    "no-mixed-operators": "off"
+    "no-mixed-operators": "off",
+    "react/require-default-props": ["error", { "functions": "defaultArguments" }]
 }

@@ -17,14 +17,18 @@ Append.propTypes = {
 };
 
 const CustomInput = ({
-  onChange, prepend, value, append, appendText,
+  onChange,
+  prepend,
+  value,
+  append = null,
+  appendText = null,
 }) => (
   <InputGroup className="mb-3">
     <InputGroup.Prepend>
       <InputGroup.Text>{prepend}</InputGroup.Text>
     </InputGroup.Prepend>
     <FormControl aria-label="icon" value={value} onChange={(e) => onChange(e.target.value)} />
-    {append == null ? <Append>{appendText}</Append> : append}
+    {append == null && appendText != null ? <Append>{appendText}</Append> : append}
   </InputGroup>
 );
 CustomInput.propTypes = {
@@ -39,10 +43,6 @@ CustomInput.propTypes = {
     PropTypes.element,
     PropTypes.string,
   ]),
-};
-CustomInput.defaultProps = {
-  append: null,
-  appendText: null,
 };
 
 export default CustomInput;
