@@ -32,7 +32,7 @@ describe('SizeInputWithSlider', () => {
     const input = screen.getByRole('textbox');
     fireEvent.change(input, { target: { value: '200' } });
 
-    expect(onChange).toHaveBeenCalledWith('200');
+    expect(onChange).toHaveBeenCalledWith(200);
   });
 
   it('renders slider component', () => {

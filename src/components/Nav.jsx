@@ -7,7 +7,7 @@ const Nav = () => (
       <Navbar.Brand href={process.env.PUBLIC_URL}>FontAwesome to PNG</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <ReactNav className="mr-auto">
+        <ReactNav className="me-auto">
           <ReactNav.Link href={process.env.PUBLIC_URL}>Home</ReactNav.Link>
           <ReactNav.Link href="https://github.com/AndreMiras/fa2png">About</ReactNav.Link>
         </ReactNav>

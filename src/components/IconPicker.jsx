@@ -32,7 +32,7 @@ Icon.propTypes = {
 };
 
 const IconList = ({ icons, onIconClick }) => (
-  <Row className="no-gutters">
+  <Row className="g-0">
     {icons.map((icon) => <Icon key={icon} name={icon} onClick={onIconClick} />)}
   </Row>
 );
@@ -42,20 +42,20 @@ IconList.propTypes = {
 };
 
 const PopoverTitle = ({ onChange }) => (
-  <Popover.Title as="h3">
+  <Popover.Header as="h3">
     <Form>
       <Form.Control type="text" placeholder="Type to filter" onChange={onChange} />
     </Form>
-  </Popover.Title>
+  </Popover.Header>
 );
 PopoverTitle.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
 const PopoverContent = ({ icons, onIconClick }) => (
-  <Popover.Content>
+  <Popover.Body>
     <IconList icons={icons} onIconClick={onIconClick} />
-  </Popover.Content>
+  </Popover.Body>
 );
 PopoverContent.propTypes = IconList.propTypes;
 

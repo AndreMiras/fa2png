@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  OverlayTrigger, InputGroup, Button,
+  OverlayTrigger, Button,
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,19 +12,17 @@ const renderOverlay = ({ onChange }) => (
 );
 
 const Append = ({ onChange, value }) => (
-  <InputGroup.Append>
-    <OverlayTrigger
-      trigger="click"
-      placement="right"
-      transition={false}
-      rootClose
-      overlay={renderOverlay({ onChange })}
-    >
-      <Button variant="outline-secondary">
-        <FontAwesomeIcon icon={value} />
-      </Button>
-    </OverlayTrigger>
-  </InputGroup.Append>
+  <OverlayTrigger
+    trigger="click"
+    placement="right"
+    transition={false}
+    rootClose
+    overlay={renderOverlay({ onChange })}
+  >
+    <Button variant="outline-secondary">
+      <FontAwesomeIcon icon={value} />
+    </Button>
+  </OverlayTrigger>
 );
 Append.propTypes = {
   onChange: PropTypes.func.isRequired,

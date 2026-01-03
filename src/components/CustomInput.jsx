@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { FormControl, InputGroup } from 'react-bootstrap';
 
 const Append = ({ children }) => (
-  <InputGroup.Append>
-    <InputGroup.Text>
-      {children}
-    </InputGroup.Text>
-  </InputGroup.Append>
+  <InputGroup.Text>
+    {children}
+  </InputGroup.Text>
 );
 Append.propTypes = {
   children: PropTypes.oneOfType([
@@ -24,9 +22,7 @@ const CustomInput = ({
   appendText = null,
 }) => (
   <InputGroup className="mb-3">
-    <InputGroup.Prepend>
-      <InputGroup.Text>{prepend}</InputGroup.Text>
-    </InputGroup.Prepend>
+    <InputGroup.Text>{prepend}</InputGroup.Text>
     <FormControl aria-label="icon" value={value} onChange={(e) => onChange(e.target.value)} />
     {append == null && appendText != null ? <Append>{appendText}</Append> : append}
   </InputGroup>

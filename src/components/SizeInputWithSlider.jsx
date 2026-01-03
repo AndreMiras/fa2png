@@ -6,7 +6,12 @@ import { Col, Row } from 'react-bootstrap';
 import CustomInput from './CustomInput';
 
 const SizeInput = ({ onChange, value }) => (
-  <CustomInput onChange={onChange} prepend="Size" value={value.toString()} appendText="px" />
+  <CustomInput
+    onChange={(val) => onChange(Number(val) || 0)}
+    prepend="Size"
+    value={value.toString()}
+    appendText="px"
+  />
 );
 SizeInput.propTypes = {
   onChange: PropTypes.func.isRequired,

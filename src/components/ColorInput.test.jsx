@@ -47,7 +47,7 @@ describe('ColorInput', () => {
     const button = screen.getByRole('button');
     fireEvent.click(button);
 
-    // ChromePicker renders "Color" title in popover
+    // HexColorPicker renders in popover with "Color" title
     const popoverTitle = screen.getAllByText('Color');
     expect(popoverTitle.length).toBeGreaterThan(1); // Original label + popover title
   });

@@ -130,9 +130,9 @@ describe('CaptureButton', () => {
     consoleError.mockRestore();
   });
 
-  it('renders magic icon on capture button', () => {
+  it('renders wand-magic icon on capture button', () => {
     const { container } = render(<CaptureButton />);
-    const svgIcon = container.querySelector('svg[data-icon="magic"]');
+    const svgIcon = container.querySelector('svg[data-icon="wand-magic"]');
     expect(svgIcon).toBeInTheDocument();
   });
 

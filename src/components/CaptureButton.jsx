@@ -47,7 +47,7 @@ const getIconCanvas = () => (
 const CaptureButton = () => (
   <Dropdown as={ButtonGroup}>
     <Button onClick={() => capture(getIconCanvas())}>
-      <FontAwesomeIcon icon="magic" />
+      <FontAwesomeIcon icon="wand-magic" />
       {' '}
       Capture
     </Button>

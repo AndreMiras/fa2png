@@ -169,6 +169,6 @@ describe('ConfigureIcon', () => {
     const sizeInput = inputs.find((input) => input.value === '100');
     fireEvent.change(sizeInput, { target: { value: '200' } });
 
-    expect(onSizeChange).toHaveBeenCalledWith('200');
+    expect(onSizeChange).toHaveBeenCalledWith(200);
   });
 });
