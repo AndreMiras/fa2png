@@ -17,15 +17,6 @@ export default [
           jsx: true,
         },
       },
-      globals: {
-        window: 'readonly',
-        document: 'readonly',
-        console: 'readonly',
-        global: 'readonly',
-        HTMLElement: 'readonly',
-        HTMLDivElement: 'readonly',
-        HTMLInputElement: 'readonly',
-      },
     },
     plugins: {
       '@typescript-eslint': typescript,
@@ -34,6 +25,7 @@ export default [
     },
     rules: {
       ...typescript.configs.recommended.rules,
+      'no-undef': 'off', // TypeScript handles this better
       'react/react-in-jsx-scope': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
