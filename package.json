@@ -28,10 +28,10 @@
     "dom-to-image": "^2.6.0",
     "js-yaml": "^4.1.1",
     "rc-slider": "^11.1.9",
-    "react": "^19.2.4",
+    "react": "^19.2.5",
     "react-bootstrap": "^2.10.6",
     "react-colorful": "^5.6.1",
-    "react-dom": "^19.2.4",
+    "react-dom": "^19.2.5",
     "react-router-dom": "^7.14.0"
   },
   "devDependencies": {
